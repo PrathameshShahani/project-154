@@ -18,17 +18,22 @@ AFRAME.registerComponent("fish", {
       fishEl.setAttribute("id", id)
       fishEl.setAttribute("position", position)
 
-      fishEl.setAttribute("material","color","#ff9100")
+      //fishEl.setAttribute("material","color","#ff9100")
       fishEl.setAttribute("geometry",{primitive:"circle" , radius:1})
-
+      fishEl.setAttribute("gltf-model","./assets/fish/scene.gltf")
       fishEl.setAttribute("animation",{
-        property:"rotation",
-        to:"0 360 0",
+        property:"position",
+        to:"100 10 -20",
         loop:"true",
-        dur:1000,
-      });  
-       
-      
+        dur:20000,
+      });
+      fishEl.setAttribute("rotation",{
+        x:0,
+        y:180,
+        z:0
+      })  
+      fishEl.setAttribute("scale",{x:0.3,y:0.3,z:0.3})
+      fishEl.setAttribute("animation-mixer",{})
       fishEntity.appendChild(fishEl);
     }
   });
